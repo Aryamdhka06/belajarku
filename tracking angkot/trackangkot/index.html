@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tes Gaya Belajar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: url(../assets/BGP.jpg) no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.85);
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+      }
+
+      h1 {
+        color: #ffc107;
+        text-align: center;
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+      .btn-custom {
+        display: block;
+        width: 100%;
+        background-color: #ffcc00;
+        color: #000;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom:hover {
+        background-color: #e6b800;
+        color: #fff;
+      }
+
+      .navbar {
+        background-color: #ffcc00;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-dark fw-bold" href="../index.html"
+          >GAYABELAJARKU</a
+        >
+      </div>
+    </nav>
+    <div class="container overlay my-5">
+      <h1>Tes Gaya Belajar</h1>
+      <form id="quizForm">
+        <div id="questionsContainer"></div>
+        <button
+          type="button"
+          class="btn btn-warning mt-3"
+          onclick="calculateResult()"
+        >
+          Lihat Hasil
+        </button>
+      </form>
+      <div id="result" class="mt-4"></div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          q: "Ketika mengoperasikan peralatan baru, saya lebih suka:",
+          a: [
+            "Membaca petunjuk",
+            "Mendengarkan penjelasan",
+            "Langsung mencoba",
+          ],
+        },
+        {
+          q: "Ketika perlu petunjuk bepergian, saya biasanya:",
+          a: ["Melihat peta", "Bertanya ke orang lain", "Menggunakan naluri"],
+        },
+        {
+          q: "Saat belajar keterampilan baru, saya lebih suka:",
+          a: [
+            "Melihat contoh",
+            "Mendengarkan penjelasan",
+            "Mempraktikkan langsung",
+          ],
+        },
+        {
+          q: "Saya lebih mudah mengingat sesuatu dengan:",
+          a: ["Melihatnya", "Mendengarnya", "Melakukannya"],
+        },
+        {
+          q: "Ketika menjelaskan sesuatu, saya lebih suka:",
+          a: ["Menunjukkan gambar", "Berbicara langsung", "Memberikan contoh"],
+        },
+        {
+          q: "Saat mendengarkan musik, saya lebih memperhatikan:",
+          a: ["Video klipnya", "Liriknya", "Irama dan ketukan"],
+        },
+        {
+          q: "Saya lebih menikmati belajar dengan:",
+          a: [
+            "Diagram dan grafik",
+            "Mendengarkan penjelasan",
+            "Praktik langsung",
+          ],
+        },
+        {
+          q: "Saya lebih mudah memahami instruksi saat:",
+          a: ["Membacanya", "Mendengarnya", "Mencobanya langsung"],
+        },
+        {
+          q: "Saat memilih pakaian, saya cenderung:",
+          a: [
+            "Melihat modelnya",
+            "Meminta pendapat orang lain",
+            "Mencobanya langsung",
+          ],
+        },
+        {
+          q: "Jika membeli mobil, saya akan:",
+          a: ["Membaca ulasan", "Berdiskusi dengan teman", "Mencoba langsung"],
+        },
+        {
+          q: "Saat berolahraga, saya lebih suka:",
+          a: [
+            "Menonton tutorial",
+            "Mendengarkan instruktur",
+            "Berlatih langsung",
+          ],
+        },
+        {
+          q: "Saat memilih restoran, saya lebih suka:",
+          a: [
+            "Melihat foto menu",
+            "Mendengar rekomendasi",
+            "Merasakan suasana",
+          ],
+        },
+        {
+          q: "Ketika stres, saya lebih sering:",
+          a: [
+            "Membayangkan skenario",
+            "Berbicara dengan seseorang",
+            "Berjalan-jalan",
+          ],
+        },
+        {
+          q: "Saat belajar bahasa baru, saya lebih suka:",
+          a: ["Melihat tulisan", "Mendengar pengucapan", "Berlatih bicara"],
+        },
+        {
+          q: "Saya lebih suka hiburan:",
+          a: ["Menonton film", "Mendengarkan podcast", "Bermain game"],
+        },
+      ];
+
+      function generateQuiz() {
+        const container = document.getElementById("questionsContainer");
+        questions.forEach((item, index) => {
+          const questionDiv = document.createElement("div");
+          questionDiv.classList.add("question");
+          questionDiv.innerHTML = `<p><strong>${index + 1}. ${
+            item.q
+          }</strong></p>`;
+          item.a.forEach((answer, i) => {
+            questionDiv.innerHTML += `
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q${index}" value="${i}" required>
+              <label class="form-check-label">${answer}</label>
+            </div>
+          `;
+          });
+          container.appendChild(questionDiv);
+        });
+      }
+
+      function calculateResult() {
+        let visual = 0,
+          auditory = 0,
+          kinesthetic = 0;
+        questions.forEach((_, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          if (selected) {
+            if (selected.value == 0) visual++;
+            else if (selected.value == 1) auditory++;
+            else kinesthetic++;
+          }
+        });
+
+        let resultText = "";
+        if (visual > auditory && visual > kinesthetic) {
+          resultText =
+            "Anda memiliki gaya belajar Visual! Anda lebih memahami informasi dengan melihat gambar, grafik, dan warna.";
+        } else if (auditory > visual && auditory > kinesthetic) {
+          resultText =
+            "Anda memiliki gaya belajar Auditori! Anda lebih memahami informasi dengan mendengarkan penjelasan.";
+        } else {
+          resultText =
+            "Anda memiliki gaya belajar Kinestetik! Anda lebih memahami informasi dengan bergerak dan praktik langsung.";
+        }
+        document.getElementById(
+          "result"
+        ).innerHTML = `<h2 class='text-center text-warning'>${resultText}</h2>`;
+      }
+
+      generateQuiz();
+    </script>
+  </body>
+</html>

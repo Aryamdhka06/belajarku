@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>GayaBelajarKu - Home</title>
+  <style>
+    /* Navbar customization */
+    .navbar {
+      background-color: #212529 !important;
+      border-bottom: 3px solid #ffc107;
+    }
+
+    .nav-link.active {
+      color: #ffc107 !important;
+    }
+
+    .nav-link:hover {
+      color: #ffc107;
+    }
+
+    .btn-outline-light {
+      border-color: #ffc107;
+      color: #ffc107;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    /* Accordion customization */
+    .accordion-button {
+      background-color: #343a40;
+      color: #ffc107;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .accordion-button:hover {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .accordion-item {
+      background-color: #212529;
+      border: none;
+      border-bottom: 1px solid #ffc107;
+    }
+
+    .accordion-body {
+      background-color: #343a40;
+      color: white;
+    }
+
+    /* Add smooth collapse/expand transition */
+    .accordion-collapse {
+      transition: max-height 0.5s ease;
+    }
+
+    /* Body background */
+    body {
+      background-color: #1a1a1a;
+    }
+
+    /* Search box customization */
+    .form-control {
+      border: 2px solid #ffc107;
+      color: white;
+      background-color: #212529;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #ffc107;
+    }
+
+    .form-control::placeholder {
+      color: #ffc107;
+    }
+
+    /* Button customization */
+    button:focus {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<div class="bg-dark text-light">
+  <!-- nav section start -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">GayaBelajarKu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="./refrensi/index.html">Referensi</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <!-- nav section end -->
+
+    <!-- carousel images -->
+    <!-- carousel images -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./assets/lanjutan1.jpg" class="d-block w-100" alt="tour guide image" style="height: 400px; object-fit: cover;">
+      <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2">
+        <h5 class="text-white">✨GAYABELAJARKU✨</h5>
+        <p class="text-white">"Belajar bukan hanya mempelajari sebuah fakta. Tapi melatih pikiran untuk berpikir."</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./assets/ganti.png" class="d-block w-100" alt="tour guide image 2" style="height: 400px; object-fit: cover;">
+      <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2">
+        <h5 class="text-white">✨GAYABELAJARKU✨</h5>
+        <p class="text-white">"Jika kamu tak tahan penatnya belajar, maka kamu akan menanggung perihnya kebodohan."</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./assets/gantii2.jpg" class="d-block w-100" alt="tour guide image 3" style="height: 400px; object-fit: cover;">
+      <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2">
+        <h5 class="text-white">✨GAYABELAJARKU✨</h5>
+        <p class="text-white">"Hidup adalah tentang belajar. Jika berhenti maka engkau akan mati."</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<section class="container my-5">
+  <h2 class="text-center text-white mb-4">Kenali Gaya Belajarmu!</h2>
+  <p class="text-center text-white">Setiap orang punya cara belajar yang unik. Temukan mana yang paling cocok untukmu!</p>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="card bg-dark text-light text-center h-100">
+        <img src="assets/auditori.jpg" class="card-img-top" alt="Visual Learning">
+        <div class="card-body">
+          <h5 class="card-title">👀 Visual</h5>
+          <p class="card-text">Gaya belajar yang mengutamakan penglihatan untuk menerima informasi dan pengetahuan.</p>
+          <a href="./informasi/index.html" class="btn btn-warning">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark text-light text-center h-100">
+        <img src="assets/audio.jpg" class="card-img-top" alt="Auditory Learning">
+        <div class="card-body">
+          <h5 class="card-title">🎧 Auditori</h5>
+          <p class="card-text">Gaya belajar yang mengandalkan pendengaran sebagai penerima informasi dan pengetahuan.</p>
+          <a href="./auditori/index.html" class="btn btn-warning">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark text-light text-center h-100">
+        <img src="assets/kinestik.jpg" class="card-img-top" alt="Kinesthetic Learning">
+        <div class="card-body">
+          <h5 class="card-title">🏃 Kinestetik</h5>
+          <p class="card-text">Gaya belajar yang mengandalkan sentuhan atau rasa untuk menerima informasi dan pengetahuan.</p>
+          <a href="./kinestik/index.html" class="btn btn-warning">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-dark text-light text-center h-100">
+        <img src="assets/verbal.jpg" class="card-img-top" alt="Verbal Learning">
+        <div class="card-body">
+          <h5 class="card-title">📖 Verbal</h5>
+          <p class="card-text">Gaya belajar yang mengandalkan lisan maupun tulisan, untuk memahami dan mengingat informasi.</p>
+          <a href="./verbal/index.html" class="btn btn-warning">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="./trackangkot/index.html" class="btn btn-lg btn-warning">Coba Tes Gaya Belajar</a>
+  </div>
+</section>
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
